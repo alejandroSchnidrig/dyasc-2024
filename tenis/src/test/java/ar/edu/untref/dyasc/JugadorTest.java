@@ -81,4 +81,9 @@ public class JugadorTest {
 		assertThat(jugador.getGames()).isEqualTo(0);
 	}
 
+	@Test
+	public void jugadorSeCreaConCeroSets() {
+		Jugador jugador = new Jugador();
+		assertThat(jugador.getSets()).isEqualTo(0);
+	}
 }
