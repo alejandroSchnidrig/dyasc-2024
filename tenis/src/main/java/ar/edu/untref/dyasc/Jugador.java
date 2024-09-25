@@ -19,8 +19,13 @@ public class Jugador {
 		return this.puntaje;
 	}
 
+	public void anotoPunto(){
+		this.puntaje++;
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}
+
 
 }

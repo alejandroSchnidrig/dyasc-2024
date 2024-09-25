@@ -31,4 +31,11 @@ public class JugadorTest {
 		assertThat(jugador.getNombre()).isEqualTo("Jugador1");
 	}
 
+	@Test
+	public void jugadorAnotaUnPunto(){
+		Jugador jugador = new Jugador("Jugador1");
+		jugador.anotoPunto();
+		assertThat(jugador.getPuntaje()).isEqualTo(1);
+	}
+
 }
