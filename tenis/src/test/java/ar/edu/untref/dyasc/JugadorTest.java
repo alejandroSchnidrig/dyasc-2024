@@ -67,4 +67,12 @@ public class JugadorTest {
 		assertThat(jugador.getGames()).isEqualTo(4);
 	}
 
+	public void jugadorGanoTresSet(){
+		Jugador jugador = new Jugador("Jugador1");
+		jugador.ganoSet();
+		jugador.ganoSet();
+		jugador.ganoSet();
+		assertThat(jugador.getSets()).isEqualTo(3);
+	}
+
 }
