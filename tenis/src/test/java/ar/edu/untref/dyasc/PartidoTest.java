@@ -1,5 +1,6 @@
 package ar.edu.untref.dyasc;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.jupiter.api.Test;
@@ -11,4 +12,12 @@ public class PartidoTest {
 		Partido partido = new Partido();
         assertNotNull(partido);
     }
+	
+	@Test
+	public void partidoJuegaPunto() {
+		Partido partido = new Partido();
+		Jugador jugador1 = new Jugador("Jugador1");
+		Jugador jugador2 = new Jugador("Jugador2");
+		partido.jugarPunto(jugador1, jugador2);
+	}
 }
