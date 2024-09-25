@@ -5,6 +5,7 @@ public class Jugador {
 	private Integer puntaje;
 	private String nombre;
 	private Integer games;
+	private Integer sets;
 	
 	public Jugador(){
 		this.nombre = null;
@@ -32,9 +33,17 @@ public class Jugador {
 	public void ganoGame(){
 		this.games++;
 	}
+
 	public Integer getGames() {
 		return this.games;
 	}
 
+	public Integer getSets() {
+		return this.sets;
+	}
 
+	public void ganoSet()  {
+
+		this.sets++;
+	}
 }

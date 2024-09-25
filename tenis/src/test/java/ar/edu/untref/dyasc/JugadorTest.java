@@ -44,4 +44,10 @@ public class JugadorTest {
 		assertThat(jugador.getGames()).isEqualTo(1);
 	}
 
+	public void jugadorGanoUnSet(){
+		Jugador jugador = new Jugador("Jugador1");
+		jugador.ganoSet();
+		assertThat(jugador.getSets()).isEqualTo(1);
+	}
+
 }
