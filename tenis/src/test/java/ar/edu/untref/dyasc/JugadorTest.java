@@ -96,4 +96,16 @@ public class JugadorTest {
 		jugador.anotoPunto();
 		assertThat(jugador.getGames()).isEqualTo(1);
 	}
+	
+	@Test
+	public void jugadorGanaSeisGamesYGanaUnSet() {
+		Jugador jugador = new Jugador();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		assertThat(jugador.getSets()).isEqualTo(1);
+	}
 }

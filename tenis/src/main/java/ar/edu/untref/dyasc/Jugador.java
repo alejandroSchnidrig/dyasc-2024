@@ -27,21 +27,32 @@ public class Jugador {
 		}
 	}
 	
-	public Integer getPuntaje() {
-		return this.puntaje;
+	public void evaluarGames() {
+		if(this.games > 5) {
+			this.sets++;
+		}
 	}
 
 	public void anotoPunto(){
 		this.puntaje++;
 		evaluarPuntaje();
 	}
+	
+	public void ganoGame(){
+		this.games++;
+		evaluarGames();
+	}
+	
+	public void ganoSet()  {
+		this.sets++;
+	}
 
 	public String getNombre() {
 		return this.nombre;
 	}
-
-	public void ganoGame(){
-		this.games++;
+ 
+	public Integer getPuntaje() {
+		return this.puntaje;
 	}
 
 	public Integer getGames() {
@@ -52,7 +63,4 @@ public class Jugador {
 		return this.sets;
 	}
 
-	public void ganoSet()  {
-		this.sets++;
-	}
 }
