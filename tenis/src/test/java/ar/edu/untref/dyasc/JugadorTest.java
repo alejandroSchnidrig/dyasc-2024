@@ -74,5 +74,11 @@ public class JugadorTest {
 		jugador.ganoSet();
 		assertThat(jugador.getSets()).isEqualTo(3);
 	}
+	
+	@Test
+	public void jugadorSeCreaConCeroGames() {
+		Jugador jugador = new Jugador();
+		assertThat(jugador.getGames()).isEqualTo(0);
+	}
 
 }
