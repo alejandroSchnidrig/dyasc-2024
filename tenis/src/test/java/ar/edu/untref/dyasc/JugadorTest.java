@@ -86,4 +86,14 @@ public class JugadorTest {
 		Jugador jugador = new Jugador();
 		assertThat(jugador.getSets()).isEqualTo(0);
 	}
+	
+	@Test
+	public void jugadorAnotaPuntosYGanaUnGame() {
+		Jugador jugador = new Jugador();
+		jugador.anotoPunto();
+		jugador.anotoPunto();
+		jugador.anotoPunto();
+		jugador.anotoPunto();
+		assertThat(jugador.getGames()).isEqualTo(1);
+	}
 }
