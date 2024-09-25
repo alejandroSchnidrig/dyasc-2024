@@ -25,4 +25,10 @@ public class JugadorTest {
 		assertThat(jugador.getNombre()).isEqualTo(null);
 	}
 
+	@Test
+	public void jugadorSeCreaConNombre(){
+		Jugador jugador = new Jugador("Jugador1");
+		assertThat(jugador.getNombre()).isEqualTo("Jugador1");
+	}
+
 }
