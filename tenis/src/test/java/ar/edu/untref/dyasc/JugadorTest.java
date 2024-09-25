@@ -37,13 +37,15 @@ public class JugadorTest {
 		jugador.anotoPunto();
 		assertThat(jugador.getPuntaje()).isEqualTo(1);
 	}
-
+	
+	@Test
 	public void jugadorGanoUnGame(){
 		Jugador jugador = new Jugador("Jugador1");
 		jugador.ganoGame();
 		assertThat(jugador.getGames()).isEqualTo(1);
 	}
-
+	
+	@Test
 	public void jugadorGanoUnSet(){
 		Jugador jugador = new Jugador("Jugador1");
 		jugador.ganoSet();
@@ -58,6 +60,7 @@ public class JugadorTest {
 		assertThat(jugador.getPuntaje()).isEqualTo(2);
 	}
 
+	@Test
 	public void jugadorGanoCuatroGame(){
 		Jugador jugador = new Jugador("Jugador1");
 		jugador.ganoGame();
@@ -67,6 +70,7 @@ public class JugadorTest {
 		assertThat(jugador.getGames()).isEqualTo(4);
 	}
 
+	@Test
 	public void jugadorGanoTresSet(){
 		Jugador jugador = new Jugador("Jugador1");
 		jugador.ganoSet();

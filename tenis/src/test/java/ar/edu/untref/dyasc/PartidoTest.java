@@ -20,4 +20,12 @@ public class PartidoTest {
 		Jugador jugador2 = new Jugador("Jugador2");
 		partido.jugarPunto(jugador1, jugador2);
 	}
+	
+	@Test
+	public void partidoJuegaPartidoHastaQueUnJugarGane() {
+		Partido partido = new Partido();
+		Jugador jugador1 = new Jugador("Jugador1");
+		Jugador jugador2 = new Jugador("Jugador2");
+		partido.jugarPartido(jugador1, jugador2);
+	}
 }
