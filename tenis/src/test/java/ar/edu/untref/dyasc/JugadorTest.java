@@ -18,5 +18,11 @@ public class JugadorTest {
 		Jugador jugador = new Jugador();
 		assertThat(jugador.getPuntaje()).isEqualTo(0);
 	}
+	
+	@Test
+	public void jugadorSeCreaSinNombre() {
+		Jugador jugador = new Jugador();
+		assertThat(jugador.getNombre()).isEqualTo(null);
+	}
 
 }
