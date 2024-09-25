@@ -58,4 +58,13 @@ public class JugadorTest {
 		assertThat(jugador.getPuntaje()).isEqualTo(2);
 	}
 
+	public void jugadorGanoCuatroGame(){
+		Jugador jugador = new Jugador("Jugador1");
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		assertThat(jugador.getGames()).isEqualTo(4);
+	}
+
 }
