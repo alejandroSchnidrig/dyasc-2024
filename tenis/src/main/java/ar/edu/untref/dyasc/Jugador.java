@@ -4,10 +4,12 @@ public class Jugador {
 	
 	private Integer puntaje;
 	private String nombre;
+	private Integer games;
 	
 	public Jugador(){
 		this.nombre = null;
 		this.puntaje = 0;
+		this.games = 0;
 	}
 
 	public Jugador(String nombre){
@@ -25,6 +27,13 @@ public class Jugador {
 
 	public String getNombre() {
 		return this.nombre;
+	}
+
+	public void ganoGame(){
+		this.games++;
+	}
+	public Integer getGames() {
+		return this.games;
 	}
 
 

@@ -38,4 +38,10 @@ public class JugadorTest {
 		assertThat(jugador.getPuntaje()).isEqualTo(1);
 	}
 
+	public void jugadorGanoUnGame(){
+		Jugador jugador = new Jugador("Jugador1");
+		jugador.ganoGame();
+		assertThat(jugador.getGames()).isEqualTo(1);
+	}
+
 }
