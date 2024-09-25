@@ -50,4 +50,12 @@ public class JugadorTest {
 		assertThat(jugador.getSets()).isEqualTo(1);
 	}
 
+	@Test
+	public void jugadorAnotaDosPuntos(){
+		Jugador jugador = new Jugador("Jugador1");
+		jugador.anotoPunto();
+		jugador.anotoPunto();
+		assertThat(jugador.getPuntaje()).isEqualTo(2);
+	}
+
 }
