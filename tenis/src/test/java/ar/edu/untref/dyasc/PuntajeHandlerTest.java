@@ -82,6 +82,20 @@ public class PuntajeHandlerTest {
         jugador1.ganoGame();
         puntajeHandler.procesarPuntaje(jugador1,jugador2);
         assertThat(jugador1.getSets()).isEqualTo(1);
+    }
 
+    @Test
+    public void jugador2GanaSeisGamesSumaSet(){
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        assertThat(jugador2.getSets()).isEqualTo(1);
     }
 }
