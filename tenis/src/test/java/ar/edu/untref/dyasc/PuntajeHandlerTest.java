@@ -40,4 +40,18 @@ public class PuntajeHandlerTest {
         assertThat(jugador2.getGames()).isEqualTo(1);
 
     }
+
+    @Test
+    public void jugador1GanaUnGameSeReseteaPuntaje(){
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        assertThat(jugador1.getPuntaje()).isEqualTo(0);
+
+    }
 }
