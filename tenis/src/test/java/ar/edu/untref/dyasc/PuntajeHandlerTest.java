@@ -15,8 +15,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador1AnotaCuatroPuntosGanaUnGame(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador1.anotoPunto();
         jugador1.anotoPunto();
@@ -29,8 +29,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador2AnotaCuatroPuntosGanaUnGame(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador2.anotoPunto();
         jugador2.anotoPunto();
@@ -43,8 +43,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador1GanaUnGameSeReseteaPuntaje(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador1.anotoPunto();
         jugador1.anotoPunto();
@@ -57,8 +57,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador2GanaUnGameSeReseteaPuntaje(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador2.anotoPunto();
         jugador2.anotoPunto();
@@ -71,8 +71,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador1GanaSeisGamesSumaSet(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador1.ganoGame();
         jugador1.ganoGame();
@@ -86,8 +86,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador2GanaSeisGamesSumaSet(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador2.ganoGame();
         jugador2.ganoGame();
@@ -101,8 +101,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador1GanaSeisGamesReseteaPuntaje(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador1.ganoGame();
         jugador1.ganoGame();
@@ -116,8 +116,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador1GanaSeisGamesReseteaGame(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador1.ganoGame();
         jugador1.ganoGame();
@@ -131,8 +131,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador2GanaSeisGamesReseteaPuntaje(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador2.ganoGame();
         jugador2.ganoGame();
@@ -146,8 +146,8 @@ public class PuntajeHandlerTest {
 
     @Test
     public void jugador2GanaSeisGamesReseteaGame(){
-        Jugador jugador1 = new Jugador();
-        Jugador jugador2 = new Jugador();
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
         PuntajeHandler puntajeHandler = new PuntajeHandler();
         jugador2.ganoGame();
         jugador2.ganoGame();

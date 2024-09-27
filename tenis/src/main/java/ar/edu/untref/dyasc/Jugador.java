@@ -7,13 +7,6 @@ public class Jugador {
 	private Integer games;
 	private Integer sets;
 	
-	public Jugador(){
-		this.nombre = null;
-		this.puntaje = 0;
-		this.games = 0;
-		this.sets = 0;
-	}
-
 	public Jugador(String nombre){
 		this.nombre = nombre;
 		this.puntaje = 0;
@@ -21,18 +14,6 @@ public class Jugador {
 		this.sets = 0;
 	}
 	
-	public void evaluarPuntaje() {
-		if(this.puntaje > 3) {
-			this.games++;
-		}
-	}
-	
-	public void evaluarGames() {
-		if(this.games > 5) {
-			this.sets++;
-		}
-	}
-
 	public void anotoPunto(){
 		this.puntaje++;
 	}

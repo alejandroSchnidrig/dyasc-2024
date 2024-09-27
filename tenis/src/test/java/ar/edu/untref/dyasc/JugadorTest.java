@@ -8,24 +8,6 @@ import org.junit.jupiter.api.Test;
 public class JugadorTest {
 	
 	@Test
-    public void crearObjetoJugador() {
-        Jugador jugador = new Jugador();
-        assertNotNull(jugador);
-    }
-	
-	@Test
-	public void jugadorSeCreaConCeroPuntos() {
-		Jugador jugador = new Jugador();
-		assertThat(jugador.getPuntaje()).isEqualTo(0);
-	}
-	
-	@Test
-	public void jugadorSeCreaSinNombre() {
-		Jugador jugador = new Jugador();
-		assertThat(jugador.getNombre()).isEqualTo(null);
-	}
-
-	@Test
 	public void jugadorSeCreaConNombre(){
 		Jugador jugador = new Jugador("Jugador1");
 		assertThat(jugador.getNombre()).isEqualTo("Jugador1");
@@ -81,19 +63,19 @@ public class JugadorTest {
 	
 	@Test
 	public void jugadorSeCreaConCeroGames() {
-		Jugador jugador = new Jugador();
+		Jugador jugador = new Jugador("Jugador1");
 		assertThat(jugador.getGames()).isEqualTo(0);
 	}
 
 	@Test
 	public void jugadorSeCreaConCeroSets() {
-		Jugador jugador = new Jugador();
+		Jugador jugador = new Jugador("Jugador1");
 		assertThat(jugador.getSets()).isEqualTo(0);
 	}
 
 	@Test
 	public void resetearPuntajeJugador()  {
-		Jugador jugador = new Jugador();
+		Jugador jugador = new Jugador("Jugador1");
 		jugador.anotoPunto();
 		jugador.anotoPunto();
 		jugador.anotoPunto();
@@ -104,7 +86,7 @@ public class JugadorTest {
 
 	@Test
 	public void resetearGameJugador()  {
-		Jugador jugador = new Jugador();
+		Jugador jugador = new Jugador("Jugador1");
 		jugador.ganoGame();
 		jugador.ganoGame();
 		jugador.ganoGame();

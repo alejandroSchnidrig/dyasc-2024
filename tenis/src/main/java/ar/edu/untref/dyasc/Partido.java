@@ -15,7 +15,7 @@ public class Partido {
 			jugarPunto(jugador1, jugador2);
 			puntajeHandler.procesarPuntaje(jugador1,jugador2);
 		}
-		
+		System.out.println(jugador1.getSets() == 3 ? MENSAJE_PARTIDO_TERMINADO + jugador1.getNombre() : MENSAJE_PARTIDO_TERMINADO + jugador2.getNombre());
 		return jugador1.getSets() == 3 ? MENSAJE_PARTIDO_TERMINADO + jugador1.getNombre() : MENSAJE_PARTIDO_TERMINADO + jugador2.getNombre();
 	}
      

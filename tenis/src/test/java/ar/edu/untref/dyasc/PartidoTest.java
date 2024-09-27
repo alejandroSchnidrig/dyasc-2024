@@ -24,7 +24,6 @@ public class PartidoTest {
 			sumoPunto = true;
 		}
 		assertThat(sumoPunto).isEqualTo(true);
-
 	}
 	
 	@Test
@@ -38,6 +37,5 @@ public class PartidoTest {
 			ganoPartido = true;
 		}
 		assertThat(ganoPartido).isEqualTo(true);
-
 	}
 }
