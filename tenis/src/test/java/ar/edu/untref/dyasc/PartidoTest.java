@@ -19,6 +19,12 @@ public class PartidoTest {
 		Jugador jugador1 = new Jugador("Jugador1");
 		Jugador jugador2 = new Jugador("Jugador2");
 		partido.jugarPunto(jugador1, jugador2);
+		boolean sumoPunto = false;
+		if (jugador1.getPuntaje() == 1 || jugador2.getPuntaje() == 1) {
+			sumoPunto = true;
+		}
+		assertThat(sumoPunto).isEqualTo(true);
+
 	}
 	
 	@Test
