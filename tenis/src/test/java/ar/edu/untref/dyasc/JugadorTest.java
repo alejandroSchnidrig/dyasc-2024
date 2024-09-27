@@ -123,4 +123,17 @@ public class JugadorTest {
 		jugador.resetearPuntaje();
 		assertThat(jugador.getPuntaje()).isEqualTo(0);
 	}
+
+	@Test
+	public void resetearGameJugador()  {
+		Jugador jugador = new Jugador();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.ganoGame();
+		jugador.resetearGame();
+		assertThat(jugador.getGames()).isEqualTo(0);
+	}
 }

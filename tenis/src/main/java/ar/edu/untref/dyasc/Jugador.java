@@ -67,4 +67,8 @@ public class Jugador {
         this.puntaje = 0;
     }
 
+	public void resetearGame() {
+		this.games = 0;
+	}
+
 }
