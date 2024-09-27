@@ -13,5 +13,19 @@ public class PuntajeHandler {
             jugador2.resetearPuntaje();
             jugador1.resetearPuntaje();
         }
+        if (jugador1.getGames() > 5) {
+            jugador1.ganoSet();
+            jugador1.resetearPuntaje();
+            jugador1.resetearGame();
+            jugador2.resetearPuntaje();
+            jugador2.resetearGame();
+        }
+        if (jugador2.getGames() > 5) {
+            jugador2.ganoSet();
+            jugador2.resetearPuntaje();
+            jugador2.resetearGame();
+            jugador1.resetearPuntaje();
+            jugador1.resetearGame();
+        }
     }
 }
