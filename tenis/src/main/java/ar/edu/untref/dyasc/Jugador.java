@@ -35,12 +35,10 @@ public class Jugador {
 
 	public void anotoPunto(){
 		this.puntaje++;
-		evaluarPuntaje();
 	}
 	
 	public void ganoGame(){
 		this.games++;
-		evaluarGames();
 	}
 	
 	public void ganoSet()  {
