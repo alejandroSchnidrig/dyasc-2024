@@ -112,4 +112,15 @@ public class JugadorTest {
 		jugador.ganoGame();
 		assertThat(jugador.getSets()).isEqualTo(1);
 	}
+
+	@Test
+	public void resetearPuntajeJugador()  {
+		Jugador jugador = new Jugador();
+		jugador.anotoPunto();
+		jugador.anotoPunto();
+		jugador.anotoPunto();
+		jugador.anotoPunto();
+		jugador.resetearPuntaje();
+		assertThat(jugador.getPuntaje()).isEqualTo(0);
+	}
 }

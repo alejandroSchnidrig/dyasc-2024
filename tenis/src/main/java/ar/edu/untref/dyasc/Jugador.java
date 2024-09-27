@@ -63,4 +63,8 @@ public class Jugador {
 		return this.sets;
 	}
 
+    public void resetearPuntaje() {
+        this.puntaje = 0;
+    }
+
 }
