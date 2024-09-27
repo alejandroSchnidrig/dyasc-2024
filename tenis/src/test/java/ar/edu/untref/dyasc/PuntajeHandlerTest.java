@@ -14,7 +14,7 @@ public class PuntajeHandlerTest {
     }
 
     @Test
-    public void jugadorAnotaCuatroPuntosGanaUnGame(){
+    public void jugador1AnotaCuatroPuntosGanaUnGame(){
         Jugador jugador1 = new Jugador();
         Jugador jugador2 = new Jugador();
         PuntajeHandler puntajeHandler = new PuntajeHandler();
@@ -24,6 +24,20 @@ public class PuntajeHandlerTest {
         jugador1.anotoPunto();
         puntajeHandler.procesarPuntaje(jugador1,jugador2);
         assertThat(jugador1.getGames()).isEqualTo(1);
+
+    }
+
+    @Test
+    public void jugador2AnotaCuatroPuntosGanaUnGame(){
+        Jugador jugador1 = new Jugador();
+        Jugador jugador2 = new Jugador();
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        assertThat(jugador2.getGames()).isEqualTo(1);
 
     }
 }
