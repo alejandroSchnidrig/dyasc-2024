@@ -456,5 +456,42 @@ public class PuntajeHandlerTest {
         puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.TIE_BRAKE);
         assertThat(jugador1.getSets()).isEqualTo(2);
     }
-
+    
+    @Test
+    public void partidoEntraEnTieBrakeNoGanaGameConDiferenciaMenorDe2Jugador2(){
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador1.ganoSet();
+        jugador1.ganoSet();
+        jugador2.ganoSet();
+        jugador2.ganoSet();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.TIE_BRAKE);
+        assertThat(jugador2.getSets()).isEqualTo(2);
+    }
 }

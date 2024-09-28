@@ -4,7 +4,7 @@ public class PuntajeHandler {
 
     public void procesarPuntaje(Jugador jugador1, Jugador jugador2, Estados estadoPartido) {
         if(Estados.TIE_BRAKE == estadoPartido) {
-            if(jugador1.getPuntaje() - jugador2.getPuntaje() >= 2 && jugador1.getPuntaje() >= 7 ) {
+            if(jugador1.getPuntaje() - jugador2.getPuntaje() >= 2 && jugador1.getPuntaje() >= 7) {
                 jugador1.ganoSet();
                 jugador1.resetearPuntaje();
                 jugador1.resetearGame();
@@ -12,7 +12,7 @@ public class PuntajeHandler {
                 jugador2.resetearGame();
             }
 
-            if(jugador2.getPuntaje() - jugador1.getPuntaje() >= 2) {
+            if(jugador2.getPuntaje() - jugador1.getPuntaje() >= 2 && jugador2.getPuntaje() >= 7) {
                 jugador2.ganoSet();
                 jugador2.resetearPuntaje();
                 jugador2.resetearGame();
