@@ -175,5 +175,22 @@ public class PuntajeHandlerTest {
         puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.DEUCE);
         assertThat(jugador1.getGames()).isEqualTo(1);
     }
+    
+    @Test
+    public void partidoEntraEnDeuceGanaGameJugador2(){
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.DEUCE);
+        assertThat(jugador2.getGames()).isEqualTo(1);
+    }
 
 }
