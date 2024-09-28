@@ -22,7 +22,7 @@ public class PuntajeHandlerTest {
         jugador1.anotoPunto();
         jugador1.anotoPunto();
         jugador1.anotoPunto();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador1.getGames()).isEqualTo(1);
 
     }
@@ -36,7 +36,7 @@ public class PuntajeHandlerTest {
         jugador2.anotoPunto();
         jugador2.anotoPunto();
         jugador2.anotoPunto();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador2.getGames()).isEqualTo(1);
 
     }
@@ -50,7 +50,7 @@ public class PuntajeHandlerTest {
         jugador1.anotoPunto();
         jugador1.anotoPunto();
         jugador1.anotoPunto();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador1.getPuntaje()).isEqualTo(0);
 
     }
@@ -64,7 +64,7 @@ public class PuntajeHandlerTest {
         jugador2.anotoPunto();
         jugador2.anotoPunto();
         jugador2.anotoPunto();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador2.getPuntaje()).isEqualTo(0);
 
     }
@@ -80,7 +80,7 @@ public class PuntajeHandlerTest {
         jugador1.ganoGame();
         jugador1.ganoGame();
         jugador1.ganoGame();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador1.getSets()).isEqualTo(1);
     }
 
@@ -95,7 +95,7 @@ public class PuntajeHandlerTest {
         jugador2.ganoGame();
         jugador2.ganoGame();
         jugador2.ganoGame();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador2.getSets()).isEqualTo(1);
     }
 
@@ -110,7 +110,7 @@ public class PuntajeHandlerTest {
         jugador1.ganoGame();
         jugador1.ganoGame();
         jugador1.ganoGame();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador1.getPuntaje()).isEqualTo(0);
     }
 
@@ -125,7 +125,7 @@ public class PuntajeHandlerTest {
         jugador1.ganoGame();
         jugador1.ganoGame();
         jugador1.ganoGame();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador1.getGames()).isEqualTo(0);
     }
 
@@ -140,7 +140,7 @@ public class PuntajeHandlerTest {
         jugador2.ganoGame();
         jugador2.ganoGame();
         jugador2.ganoGame();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador2.getPuntaje()).isEqualTo(0);
     }
 
@@ -155,8 +155,25 @@ public class PuntajeHandlerTest {
         jugador2.ganoGame();
         jugador2.ganoGame();
         jugador2.ganoGame();
-        puntajeHandler.procesarPuntaje(jugador1,jugador2);
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador2.getGames()).isEqualTo(0);
+    }
+    
+    @Test
+    public void partidoEntraEnDeuceGanaGameJugador1(){
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.DEUCE);
+        assertThat(jugador1.getGames()).isEqualTo(1);
     }
 
 }

@@ -15,7 +15,7 @@ public class Partido {
 		while(Estados.PARTIDO_FINALIZADO != estadoPartido) {
 			jugarPunto(jugador1, jugador2);
 			estadoPartido = estadosHandler.getEstado(jugador1, jugador2);
-			puntajeHandler.procesarPuntaje(jugador1,jugador2);
+			puntajeHandler.procesarPuntaje(jugador1,jugador2, estadoPartido);
 		}
 		
 		return jugador1.getSets() == 3 ? MENSAJE_PARTIDO_TERMINADO + jugador1.getNombre() : MENSAJE_PARTIDO_TERMINADO + jugador2.getNombre();
