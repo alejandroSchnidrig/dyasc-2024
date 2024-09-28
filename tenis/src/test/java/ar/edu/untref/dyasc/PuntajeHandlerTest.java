@@ -398,4 +398,25 @@ public class PuntajeHandlerTest {
         assertThat(jugador1.getSets()).isEqualTo(0);
     }
 
+    @Test
+    public void jugadorNoGanaGameConDiferenciaMenorDeDosGamesJugador2(){
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
+        assertThat(jugador2.getSets()).isEqualTo(0);
+    }
+
 }

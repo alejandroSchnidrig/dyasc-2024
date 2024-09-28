@@ -66,7 +66,7 @@ public class PuntajeHandler {
                 jugador2.resetearGame();
             }
             
-            if (jugador2.getGames() > 5) {
+            if (jugador2.getGames() - jugador1.getGames() >= 2 && jugador2.getGames() > 5) {
                 jugador2.ganoSet();
                 jugador2.resetearPuntaje();
                 jugador2.resetearGame();
