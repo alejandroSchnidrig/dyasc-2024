@@ -340,4 +340,41 @@ public class PuntajeHandlerTest {
         assertThat(jugador1.getSets()).isEqualTo(3);
     }
 
+    @Test
+    public void partidoEntraEnTieBrakeGanaSetGanaPartidoJugador2(){
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador1.ganoSet();
+        jugador1.ganoSet();
+        jugador2.ganoSet();
+        jugador2.ganoSet();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador1.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.TIE_BRAKE);
+        assertThat(jugador2.getSets()).isEqualTo(3);
+    }
+
 }
