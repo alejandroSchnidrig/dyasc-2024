@@ -8,6 +8,12 @@ import org.junit.jupiter.api.Test;
 public class JugadorTest {
 	
 	@Test
+	public void crearObjetoJugador(){
+		Jugador jugador = new Jugador("Jugador1");
+		assertNotNull(jugador);
+	}
+	
+	@Test
 	public void jugadorSeCreaConNombre(){
 		Jugador jugador = new Jugador("Jugador1");
 		assertThat(jugador.getNombre()).isEqualTo("Jugador1");
