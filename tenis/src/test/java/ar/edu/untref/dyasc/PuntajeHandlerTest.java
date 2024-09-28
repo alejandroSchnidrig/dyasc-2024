@@ -214,5 +214,27 @@ public class PuntajeHandlerTest {
         puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.DEUCE);
         assertThat(jugador1.getSets()).isEqualTo(1);
     }
+    
+    @Test
+    public void partidoEntraEnDeuceGanaGameGanaSetJugador2(){
+        Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador2.ganoGame();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.DEUCE);
+        assertThat(jugador2.getSets()).isEqualTo(1);
+    }
 
 }
