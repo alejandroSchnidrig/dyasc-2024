@@ -4,10 +4,16 @@ public class PuntajeHandler {
 
     public void procesarPuntaje(Jugador jugador1, Jugador jugador2, Estados estadoPartido) {
     	if(Estados.DEUCE == estadoPartido) {
-    		if(jugador1.getPuntaje() - jugador2.getPuntaje() >= 2) {
+    		if(jugador1.getPuntaje() - jugador2.getPuntaje() >= 2 && jugador1.getGames() < 5) {
     			jugador1.ganoGame();
                 jugador1.resetearPuntaje();
                 jugador2.resetearPuntaje();
+    		}else if(jugador1.getPuntaje() - jugador2.getPuntaje() >= 2) {
+    			jugador1.ganoSet();
+                jugador1.resetearPuntaje();
+                jugador1.resetearGame();
+                jugador2.resetearPuntaje();
+                jugador2.resetearGame();
     		}
     		
     		if(jugador2.getPuntaje() - jugador1.getPuntaje() >= 2) {
