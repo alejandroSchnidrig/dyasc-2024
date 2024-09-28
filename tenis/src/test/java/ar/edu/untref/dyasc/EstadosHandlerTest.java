@@ -35,4 +35,19 @@ public class EstadosHandlerTest {
 	    Estados estado = estadosHandler.getEstado(jugador1, jugador2);
 	    assertThat(estado).isEqualTo(Estados.PARTIDO_FINALIZADO);
 	} 
+	
+	@Test
+	public void elPartidoEstaenDeuce() {
+		EstadosHandler estadosHandler = new EstadosHandler();
+		Jugador jugador1 = new Jugador("Federer");
+	    Jugador jugador2 = new Jugador("Nadal");
+	    jugador1.anotoPunto();
+	    jugador1.anotoPunto();
+	    jugador1.anotoPunto();
+	    jugador2.anotoPunto();
+	    jugador2.anotoPunto();
+	    jugador2.anotoPunto();
+	    Estados estado = estadosHandler.getEstado(jugador1, jugador2);
+	    assertThat(estado).isEqualTo(Estados.DEUCE);
+	} 
 }
