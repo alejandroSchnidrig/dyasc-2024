@@ -49,5 +49,26 @@ public class EstadosHandlerTest {
 	    jugador2.anotoPunto();
 	    Estados estado = estadosHandler.getEstado(jugador1, jugador2);
 	    assertThat(estado).isEqualTo(Estados.DEUCE);
-	} 
+	}
+
+	@Test
+	public void elPartidoEstaEnTieBrake() {
+		EstadosHandler estadosHandler = new EstadosHandler();
+		Jugador jugador1 = new Jugador("Federer");
+		Jugador jugador2 = new Jugador("Nadal");
+		jugador1.ganoGame();
+		jugador1.ganoGame();
+		jugador1.ganoGame();
+		jugador2.ganoGame();
+		jugador2.ganoGame();
+		jugador2.ganoGame();
+		jugador1.ganoGame();
+		jugador1.ganoGame();
+		jugador1.ganoGame();
+		jugador2.ganoGame();
+		jugador2.ganoGame();
+		jugador2.ganoGame();
+		Estados estado = estadosHandler.getEstado(jugador1, jugador2);
+		assertThat(estado).isEqualTo(Estados.TIE_BRAKE);
+	}
 }
