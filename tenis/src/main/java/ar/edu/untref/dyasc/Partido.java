@@ -4,6 +4,7 @@ public class Partido {
 
 	private PuntajeHandler puntajeHandler = new PuntajeHandler();
 	private EstadosHandler estadosHandler = new EstadosHandler();
+	private Tablero tablero = new Tablero();
 	private Estados estadoPartido = Estados.PARTIDO_EN_CURSO; 
 	private final String MENSAJE_PARTIDO_TERMINADO  = "Ganador del partido: ";
 	
@@ -16,6 +17,7 @@ public class Partido {
 			jugarPunto(jugador1, jugador2);
 			estadoPartido = estadosHandler.getEstado(jugador1, jugador2);
 			puntajeHandler.procesarPuntaje(jugador1,jugador2, estadoPartido);
+			tablero.imprimirResutado(jugador1, jugador2);
 		}
 		
 		return jugador1.getSets() == 3 ? MENSAJE_PARTIDO_TERMINADO + jugador1.getNombre() : MENSAJE_PARTIDO_TERMINADO + jugador2.getNombre();
