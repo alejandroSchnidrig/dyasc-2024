@@ -11,6 +11,15 @@ public class PuntajeHandler {
                 jugador2.resetearPuntaje();
                 jugador2.resetearGame();
             }
+
+            if(jugador2.getPuntaje() - jugador1.getPuntaje() >= 2 ) {
+                jugador2.ganoSet();
+                jugador2.resetearPuntaje();
+                jugador2.resetearGame();
+                jugador1.resetearPuntaje();
+                jugador1.resetearGame();
+            }
+
         }
     	if(Estados.DEUCE == estadoPartido) {
     		if(jugador1.getPuntaje() - jugador2.getPuntaje() >= 2 && jugador1.getGames() < 5) {
