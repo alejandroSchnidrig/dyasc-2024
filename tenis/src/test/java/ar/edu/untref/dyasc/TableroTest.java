@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 public class TableroTest {
 	
 	 @Test
-	    public void crearObjetoTableroTest() {
-	        Tablero tablero = new Tablero();
-	        assertNotNull(tablero);
-	    }
+	 public void crearObjetoTableroTest() {
+		 Tablero tablero = new Tablero();
+	     assertNotNull(tablero);
+	 }
 
 }
