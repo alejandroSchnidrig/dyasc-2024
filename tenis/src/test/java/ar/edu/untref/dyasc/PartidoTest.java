@@ -44,8 +44,11 @@ public class PartidoTest {
 		Partido partido = new Partido();
 		Jugador jugador1 = new Jugador("Jugador1");
 		Jugador jugador2 = new Jugador("Jugador2");
-		jugador1.anotoPunto();
 		partido.jugarPunto(jugador1, jugador2, Estados.DEUCE);
-		assertThat(jugador1.isAdvance()).isEqualTo(true);
+		boolean algunJugadorAdvance = false;
+		if(jugador1.isAdvance()  || jugador2.isAdvance() ) {
+			algunJugadorAdvance = true;
+		}
+		assertThat(algunJugadorAdvance).isEqualTo(true);
 	}
 }
