@@ -7,6 +7,7 @@ public class Jugador {
 	private Integer games;
 	private Integer sets;
 	private boolean advance;
+	private boolean winAdvance;
 	
 	public Jugador(String nombre){
 		this.nombre = nombre;
@@ -14,6 +15,7 @@ public class Jugador {
 		this.games = 0;
 		this.sets = 0;
 		this.advance = false;
+		this.winAdvance = false;
 	}
 	
 	public void anotoPunto(){
@@ -58,6 +60,14 @@ public class Jugador {
 
 	public void setAdvance(boolean advance) {
 		this.advance = advance;
+	}
+
+	public boolean isWinAdvance() {
+		return winAdvance;
+	}
+
+	public void setWinAdvance(boolean winAdvance) {
+		this.winAdvance = winAdvance;
 	}
 
 }

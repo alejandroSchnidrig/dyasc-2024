@@ -18,7 +18,7 @@ public class PartidoTest {
 		Partido partido = new Partido();
 		Jugador jugador1 = new Jugador("Jugador1");
 		Jugador jugador2 = new Jugador("Jugador2");
-		partido.jugarPunto(jugador1, jugador2);
+		partido.jugarPunto(jugador1, jugador2, Estados.PARTIDO_EN_CURSO);
 		boolean sumoPunto = false;
 		if (jugador1.getPuntaje() == 1 || jugador2.getPuntaje() == 1) {
 			sumoPunto = true;
@@ -37,5 +37,15 @@ public class PartidoTest {
 			ganoPartido = true;
 		}
 		assertThat(ganoPartido).isEqualTo(true);
+	}
+	
+	@Test
+	public void JugadorGanaVentajaEnDeuce() {
+		Partido partido = new Partido();
+		Jugador jugador1 = new Jugador("Jugador1");
+		Jugador jugador2 = new Jugador("Jugador2");
+		jugador1.anotoPunto();
+		partido.jugarPunto(jugador1, jugador2, Estados.DEUCE);
+		assertThat(jugador1.isAdvance()).isEqualTo(true);
 	}
 }
