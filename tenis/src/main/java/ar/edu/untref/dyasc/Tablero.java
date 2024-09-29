@@ -1,21 +1,30 @@
 package ar.edu.untref.dyasc;
 
-public class Tablero {
+import java.util.Map;
 
-	public void imprimirResutado(Jugador jugador1, Jugador jugador2) { 
-		String puntosJugador1 = jugador1.isAdvance() ? "A" : jugador1.getPuntaje().toString();
-		String puntosJugador2 = jugador2.isAdvance() ? "A" : jugador2.getPuntaje().toString();
+public class Tablero {
+	
+	private Map<Integer, String> puntos = Map.of(
+			0, "0",
+		    1, "15",
+		    2, "30",
+		    3, "40"
+	);
+
+	public void imprimirResutado(Jugador jugador1, Jugador jugador2, Estados estadoPartido) { 
+		String puntosJugador1 = jugador1.isAdvance() ? "A" : puntos.get(jugador1.getPuntaje());
+		String puntosJugador2 = jugador2.isAdvance() ? "A" : puntos.get(jugador2.getPuntaje());
 		
 		
 		System.out.print("---------------------------------------------\n" +
 	                     "|             RESULTADO PARTIDO              |\n" +
 				         "---------------------------------------------\n" + 
-	                     "|  Jugadores     sets     games    puntos    |\n" +
-		                 "|  " + jugador1.getNombre() + "         " + jugador1.getSets() + "        " + jugador1.getGames() + "        " + puntosJugador1 + "      |\n" +
-		                 "|  " + jugador2.getNombre() + "         " + jugador2.getSets() + "        " + jugador2.getGames() + "        " + puntosJugador2 + "      |\n" +
-		                 "---------------------------------------------\n");
-		
-		
+	                     "   Jugadores     sets     games    puntos     \n" +
+		                 "   " + jugador1.getNombre() + "         " + jugador1.getSets() + "        " + jugador1.getGames() + "        " + puntosJugador1 + "       \n" +
+		                 "   " + jugador2.getNombre() + "         " + jugador2.getSets() + "        " + jugador2.getGames() + "        " + puntosJugador2 + "       \n" +
+		                 "                                              \n" +
+		                 "              " +   estadoPartido    + "         \n" +
+		                 "---------------------------------------------\n");   
 	}
 
 }

@@ -13,7 +13,7 @@ public class Partido {
 			estadoPartido = estadosHandler.getEstado(jugador1, jugador2);
 			jugarPunto(jugador1, jugador2, estadoPartido);
 			puntajeHandler.procesarPuntaje(jugador1,jugador2, estadoPartido);
-			tablero.imprimirResutado(jugador1, jugador2);
+			tablero.imprimirResutado(jugador1, jugador2, estadoPartido);
 		}
 		
 		return jugador1.getSets() == 3 ? MENSAJE_PARTIDO_TERMINADO + jugador1.getNombre() : MENSAJE_PARTIDO_TERMINADO + jugador2.getNombre();
