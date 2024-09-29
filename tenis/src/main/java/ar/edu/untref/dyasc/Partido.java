@@ -8,15 +8,13 @@ public class Partido {
 	private Estados estadoPartido = Estados.PARTIDO_EN_CURSO; 
 	private final String MENSAJE_PARTIDO_TERMINADO  = "Ganador del partido: ";
 	
-	public String jugarPartido(Jugador jugador1, Jugador jugador2) {
+	public void jugarPartido(Jugador jugador1, Jugador jugador2) {
 		while(Estados.PARTIDO_FINALIZADO != estadoPartido) {
 			estadoPartido = estadosHandler.getEstado(jugador1, jugador2);
 			jugarPunto(jugador1, jugador2, estadoPartido);
 			puntajeHandler.procesarPuntaje(jugador1,jugador2, estadoPartido);
 			tablero.imprimirResutado(jugador1, jugador2, estadoPartido);
 		}
-		
-		return jugador1.getSets() == 3 ? MENSAJE_PARTIDO_TERMINADO + jugador1.getNombre() : MENSAJE_PARTIDO_TERMINADO + jugador2.getNombre();
 	}
      
 	public void jugarPunto(Jugador jugador1, Jugador jugador2, Estados estadoPartido) {
