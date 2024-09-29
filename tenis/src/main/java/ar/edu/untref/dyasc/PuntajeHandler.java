@@ -21,16 +21,30 @@ public class PuntajeHandler {
             }
 
         }else if(Estados.DEUCE == estadoPartido) {
+        	if(jugador1.getPuntaje() > jugador2.getPuntaje()) {
+        		jugador1.setAdvance(true);
+        		jugador2.setAdvance(false);
+        	}else if(jugador2.getPuntaje() > jugador1.getPuntaje()) {
+        		jugador1.setAdvance(false);
+        		jugador2.setAdvance(true);
+        	}else {
+        		jugador1.setAdvance(false);
+        		jugador2.setAdvance(false);
+        	}
     		if(jugador1.getPuntaje() - jugador2.getPuntaje() >= 2 && jugador1.getGames() < 5) {
     			jugador1.ganoGame();
                 jugador1.resetearPuntaje();
                 jugador2.resetearPuntaje();
+                jugador1.setAdvance(false);
+        		jugador2.setAdvance(false);
     		}else if(jugador1.getPuntaje() - jugador2.getPuntaje() >= 2) {
     			jugador1.ganoSet();
                 jugador1.resetearPuntaje();
                 jugador1.resetearGame();
                 jugador2.resetearPuntaje();
                 jugador2.resetearGame();
+                jugador1.setAdvance(false);
+        		jugador2.setAdvance(false);
     		}
     		
     		if(jugador2.getPuntaje() - jugador1.getPuntaje() >= 2 && jugador2.getGames() < 5) {

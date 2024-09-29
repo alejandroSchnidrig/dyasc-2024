@@ -494,4 +494,20 @@ public class PuntajeHandlerTest {
         puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.TIE_BRAKE);
         assertThat(jugador2.getSets()).isEqualTo(2);
     }
+    
+    @Test
+    public void jugador1tieneVentajaEnDeuce() {
+    	Jugador jugador1 = new Jugador("Jugador1");
+        Jugador jugador2 = new Jugador("Jugador2");
+        PuntajeHandler puntajeHandler = new PuntajeHandler();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador1.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador2.anotoPunto();
+        jugador1.anotoPunto();
+        puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.DEUCE);
+        assertThat(jugador1.isAdvance()).isEqualTo(true);
+    }
 }
