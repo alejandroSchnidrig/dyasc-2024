@@ -11,5 +11,4 @@ public class TableroTest {
 		 Tablero tablero = new Tablero();
 	     assertNotNull(tablero);
 	 }
-
 }

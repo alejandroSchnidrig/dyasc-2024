@@ -5,8 +5,7 @@ public class Partido {
 	private PuntajeHandler puntajeHandler = new PuntajeHandler();
 	private EstadosHandler estadosHandler = new EstadosHandler();
 	private Tablero tablero = new Tablero();
-	private Estados estadoPartido = Estados.PARTIDO_EN_CURSO; 
-	private final String MENSAJE_PARTIDO_TERMINADO  = "Ganador del partido: ";
+	private Estados estadoPartido = Estados.PARTIDO_EN_CURSO;
 	
 	public void jugarPartido(Jugador jugador1, Jugador jugador2) {
 		while(Estados.PARTIDO_FINALIZADO != estadoPartido) {

@@ -24,7 +24,6 @@ public class PuntajeHandlerTest {
         jugador1.anotoPunto();
         puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador1.getGames()).isEqualTo(1);
-
     }
 
     @Test
@@ -38,7 +37,6 @@ public class PuntajeHandlerTest {
         jugador2.anotoPunto();
         puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador2.getGames()).isEqualTo(1);
-
     }
 
     @Test
@@ -52,7 +50,6 @@ public class PuntajeHandlerTest {
         jugador1.anotoPunto();
         puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador1.getPuntaje()).isEqualTo(0);
-
     }
 
     @Test
@@ -66,7 +63,6 @@ public class PuntajeHandlerTest {
         jugador2.anotoPunto();
         puntajeHandler.procesarPuntaje(jugador1,jugador2, Estados.PARTIDO_EN_CURSO);
         assertThat(jugador2.getPuntaje()).isEqualTo(0);
-
     }
 
     @Test

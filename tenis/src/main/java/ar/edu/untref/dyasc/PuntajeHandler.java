@@ -11,7 +11,6 @@ public class PuntajeHandler {
             if(jugador2.getPuntaje() - jugador1.getPuntaje() >= 2 && jugador2.getPuntaje() >= 7) {
             	ganoSetJugador2(jugador1, jugador2);
             }
-
         }else if(Estados.DEUCE == estadoPartido) {
     		if(jugador1.isWinAdvance() && jugador1.getGames() < 5) {
     			ganoGameJugador1(jugador1, jugador2);
@@ -28,7 +27,6 @@ public class PuntajeHandler {
     			ganoSetJugador2(jugador1, jugador2);
                 resetarVentajas(jugador1, jugador2);
     		}
-    		
     	}else if(Estados.PARTIDO_EN_CURSO == estadoPartido){
     		if (jugador1.getPuntaje() > 3) {
     			ganoGameJugador1(jugador1, jugador2);
