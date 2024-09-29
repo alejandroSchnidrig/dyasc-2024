@@ -109,4 +109,10 @@ public class JugadorTest {
 		jugador.setAdvance(true);
 		assertThat(jugador.isAdvance()).isEqualTo(true);
 	}
+	
+	@Test
+	public void jugadorSeCreaSinVentaja() {
+		Jugador jugador = new Jugador("Jugador1");
+		assertThat(jugador.isAdvance()).isEqualTo(false);
+	}
 }
